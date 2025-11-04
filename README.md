@@ -38,6 +38,7 @@ Create a `config.json` file in the root directory (example already included):
 ```
 
 - `packages`: Array of npm packages to monitor
+
 You can add more packages in the array.  
 
 ### Telegram Bot Setup
