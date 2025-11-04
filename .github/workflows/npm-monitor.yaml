@@ -2,7 +2,7 @@ name: Monitor tronweb & tronbox NPM Updates
 
 on:
   schedule:
-    - cron: "0 * * * *" # 每小时运行一次
+    - cron: "*/10 * * * *" # Run every 10 minutes.
   workflow_dispatch:
 
 jobs:
