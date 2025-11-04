@@ -1,0 +1,25 @@
+{
+  "name": "npm-package-watch",
+  "description": "Monitor npm packages and notify via Telegram on new releases.",
+  "version": "1.0.0",
+  "main": "index.js",
+  "type": "module",
+  "dependencies": {
+    "fs": "^0.0.1-security",
+    "node-fetch": "^3.3.2"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/tronjs-io/npm-package-watch.git"
+  },
+  "author": "unicornonea",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/tronjs-io/npm-package-watch/issues"
+  },
+  "homepage": "https://github.com/tronjs-io/npm-package-watch#readme"
+}

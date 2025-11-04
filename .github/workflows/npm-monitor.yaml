@@ -1,0 +1,36 @@
+name: Monitor tronweb & tronbox NPM Updates
+
+on:
+  schedule:
+    - cron: "0 * * * *" # 每小时运行一次
+  workflow_dispatch:
+
+jobs:
+  check-npm:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      - name: Install dependencies
+        run: npm install node-fetch@3
+
+      - name: Run NPM monitor script
+        run: node scripts/npm-monitor.js
+        env:
+          TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+          TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
+
+      - name: Commit updated version record
+        run: |
+          git config --global user.name 'github-actions'
+          git config --global user.email 'github-actions@github.com'
+          git add tron_versions.json
+          git commit -m 'update tron package versions' || echo "no changes"
+          git push || echo "no changes"
