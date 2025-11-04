@@ -4,7 +4,7 @@ import fs from 'fs';
 
 const BOT_TOKEN = process.env.TELEGRAM_BOT_TOKEN;
 const CHAT_ID = process.env.TELEGRAM_CHAT_ID;
-const FILE = './tron_versions.json';
+const FILE = './pkgVersions.json';
 
 const pkg = JSON.parse(fs.readFileSync('./config.json', 'utf-8'));
 const PACKAGES = pkg?.packages || [];

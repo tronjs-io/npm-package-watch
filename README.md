@@ -71,7 +71,7 @@ node scripts/monitor-npm.js
 
 - Reads the package list from `config.json`  
 - Sends a Telegram notification if any package has a new version  
-- Updates `tron_versions.json` to store the latest detected versions  
+- Updates `pkgVersions.json` to store the latest detected versions  
 
 ### GitHub Actions Scheduled Run
 
@@ -80,7 +80,7 @@ Workflow file: `.github/workflows/monitor-tron-npm.yml`
 - Runs hourly (or manually via `workflow_dispatch`)  
 - Checks the latest versions  
 - Sends Telegram notifications on updates  
-- Updates `tron_versions.json` and commits changes back to the repository  
+- Updates `pkgVersions.json` and commits changes back to the repository  
 
 Example schedule:
 
@@ -102,7 +102,7 @@ on:
 │       └── npm-monitor.yml   # GitHub Actions workflow
 ├── scripts/
 │   └── npm-monitor.js             # Monitoring script
-├── tron_versions.json             # Stores the last detected versions
+├── pkgVersions.json             # Stores the last detected versions
 ├── config.json                    # Package monitoring configuration
 └── package.json
 ```

@@ -31,6 +31,6 @@ jobs:
         run: |
           git config --global user.name 'github-actions'
           git config --global user.email 'github-actions@github.com'
-          git add tron_versions.json
+          git add pkgVersions.json
           git commit -m 'update tron package versions' || echo "no changes"
           git push || echo "no changes"
